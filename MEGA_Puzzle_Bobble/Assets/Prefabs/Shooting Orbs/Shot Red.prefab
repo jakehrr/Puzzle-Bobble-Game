@@ -98,7 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CentrePoint: {x: 0, y: 0, z: 0}
   Radius: 0.3
-  mass: 1
+  minExtent: {x: 0, y: 0}
+  maxExtent: {x: 0, y: 0}
 --- !u!114 &3567616981534714141
 MonoBehaviour:
   m_ObjectHideFlags: 0
