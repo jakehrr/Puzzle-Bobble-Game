@@ -9,6 +9,34 @@ public class ObjectCollision : MonoBehaviour
     public Vector2 minExtent;
     public Vector2 maxExtent;
 
+    public bool ObjectsCollide(AABB box, BoundingCircle orb)
+    {
+        float s, d = 0; 
+
+        if(orb.CentrePoint.x < box.minExtent.x)
+        {
+            s = orb.CentrePoint.x - box.minExtent.x;
+            d += s * s; 
+        }
+        else if(orb.CentrePoint.x > box.maxExtent.x)
+        {
+            s = orb.CentrePoint.x - box.maxExtent.x;
+            d += s * s; 
+        }
+
+        if (orb.CentrePoint.y < box.minExtent.y)
+        {
+            s = orb.CentrePoint.y - box.minExtent.y;
+            d += s * s;
+        }
+        else if (orb.CentrePoint.y > box.maxExtent.y)
+        {
+            s = orb.CentrePoint.y - box.maxExtent.y;
+            d += s * s;
+        }
+        return d <= orb.Radius * orb.Radius;
+    }
+
     public bool CircleIntersects(BoundingCircle otherCircle)
     {
         Vector2 VectorToOtherCircle = otherCircle.CentrePoint - CentrePoint;

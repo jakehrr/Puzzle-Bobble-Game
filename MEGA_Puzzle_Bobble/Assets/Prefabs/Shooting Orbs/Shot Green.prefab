@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2838201901711975904}
   - component: {fileID: 8780485537932298760}
   - component: {fileID: 3222664230750192593}
+  - component: {fileID: 1849201593}
   m_Layer: 0
   m_Name: Shot Green
   m_TagString: Untagged
@@ -98,7 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CentrePoint: {x: 0, y: 0, z: 0}
   Radius: 0.3
-  mass: 1
+  minExtent: {x: 0, y: 0}
+  maxExtent: {x: 0, y: 0}
 --- !u!114 &3222664230750192593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,4 +113,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551517ab61770c0409c11b52dcb2beab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  force: {x: 0, y: 0, z: 0}
   mass: 1
+--- !u!114 &1849201593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970353166829301126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d905cb3f611af4cb8441faa75e864d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: {x: 0, y: 0, z: 0}
+  mass: 1
+  speed: 0

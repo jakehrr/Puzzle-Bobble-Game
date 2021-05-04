@@ -12,8 +12,17 @@ public class MathsLib : MonoBehaviour
 
         return rv;
     }
+
+    public static float DegreesToRadian(float degrees)
+    {
+        float rv;
+
+        rv = degrees / (180.0f / Mathf.PI);
+
+        return rv; 
+    }
     
-    public static Vector2 RadiansToVector(float angle)
+    public static Vector3 RadiansToVector(float angle)
     {
         Vector2 rv = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 

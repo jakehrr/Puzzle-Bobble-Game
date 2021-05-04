@@ -9,11 +9,19 @@ public class AABB : ObjectCollision
         BoxCollision();
     }
 
-    public static bool BoxIntersects(AABB box1, AABB box2)
+    public void BoxCollision()
     {
-        return !(box2.left > box1.right
-            || box2.right < box1.left
-            || box2.top < box1.bottom
-            || box2.bottom > box1.top);
+     AABB[] boxes = FindObjectsOfType<AABB>();
+
+        foreach (AABB box in boxes)
+        {
+            if (box != this)
+            {
+                if (BoxIntersects(this, box))
+                {
+                    Debug.Log(this.gameObject.name + " is intersecting with " + box.gameObject.name);
+                }
+            }
+        }
     }
 }

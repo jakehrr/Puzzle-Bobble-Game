@@ -5,13 +5,15 @@ using UnityEngine;
 public class Bullet : MyRigidBody
 {
     public float speed;
-    MyVector3 rotation = new MyVector3(0, 0, 1);
 
     // Start is called before the first frame update
-    void FixedUpdate()
+    void Update()
     {
-        
+        // Euelr angle degree to radian forumla 
+        speed = MathsLib.DegreesToRadian(transform.rotation.eulerAngles.z);
+        // radian to vector
+        force = MathsLib.RadiansToVector(speed);
+        // move projectile
+        transform.position += force * Time.deltaTime; 
     }
-
-    
 }

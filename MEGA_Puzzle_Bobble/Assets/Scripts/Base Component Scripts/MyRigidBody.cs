@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class MyRigidBody : MonoBehaviour
 {
-    public MyVector3 force = new MyVector3(0,0,0);
-    MyVector3 acceleration = new MyVector3(0,0,0);
-    MyVector3 velocity = new MyVector3(0,0,0);
+    public Vector3 force;
+    Vector3 acceleration;
+    Vector3 velocity;
     public float mass = 1;
-    const float GBA_DeltaTime = 0.0167f; 
+   // const float GBA_DeltaTime = 0.0167f; 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         acceleration = force / mass;
 
-        velocity += acceleration * GBA_DeltaTime;
+        velocity += acceleration * Time.deltaTime; //GBA_DeltaTime;
 
-        transform.position += (velocity * GBA_DeltaTime).ToUnityVector();
+        transform.position += velocity * Time.deltaTime; // GBA_DeltaTime;
     }
 }

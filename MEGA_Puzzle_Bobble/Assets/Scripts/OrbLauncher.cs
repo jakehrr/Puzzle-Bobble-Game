@@ -31,15 +31,7 @@ public class OrbLauncher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             int index = Random.Range(0, 3); 
-            GameObject bulletRotation = Instantiate(_bulletPrefab[index], _shotPoint.position, _shotPoint.rotation);
-
-            MyVector3 direction = MathsLib.EulerAnglesToDirection(new MyVector3 (transform.eulerAngles));
-
-            bulletRotation.GetComponent<MyRigidBody>().force = direction;
-
-            Debug.Log(direction.x);
-            Debug.Log(direction.y);
-            Debug.Log(direction.z);
+            Instantiate(_bulletPrefab[index], _shotPoint.position, _shotPoint.rotation);
         }
     }
 }
